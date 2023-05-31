@@ -64,3 +64,15 @@ function limpa() {
 function resetarPagina() {
   location.reload();
 }
+
+let isBlack = false;
+
+function changeBackground() {
+  const body = document.body;
+  isBlack = !isBlack;
+  if (isBlack) {
+    body.style.backgroundColor = "black";
+  } else {
+    body.style.backgroundColor = "#444444";
+  }
+}
