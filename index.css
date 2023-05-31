@@ -30,7 +30,7 @@ h1 {
   align-items: center;
 }
 
-button {
+#rest {
   background-color: #000066;
   color: white;
   border-radius: 25px;
@@ -40,9 +40,11 @@ button {
   align-items: center;
   margin: 0.5%;
   font-size: 18px;
+  border: none;
+  cursor: pointer;
 }
 
-button:hover {
+#rest:hover {
   background-color: white;
   color: #000066;
   font-weight: bold;
@@ -78,4 +80,28 @@ body {
   background: none;
   color: white;
   font-size: 24px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  float: right;
+}
+
+.btn {
+  background-image: url(img/circulo\ preto\ e\ branco.png);
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+}
+
+.letra-x {
+  color: red;
+}
+
+.letra-o {
+  color: blue;
 }

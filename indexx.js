@@ -10,65 +10,55 @@ const rulesToSuccess = [
   [3, 6, 9],
 ];
 
-function test() {
-  for (rule of rulesToSuccess) {
-    let caixasElements = [];
+let letra = "X"; // Variável global para acompanhar a letra atual
 
-    for (caixa of rule) {
-      caixasElements.push(document.getElementById(`caixa${caixa}`).innerHTML);
-    }
+function joga(element) {
+  const click = element.innerHTML;
+  if (click) {
+    alert("Opa, este quadrado já foi escolhido!");
+    return; // Retorna caso o quadrado já tenha sido escolhido
+  }
 
-    const sequence = caixasElements.join("");
+  element.innerHTML = letra;
+  element.style.color = letra === "X" ? "red" : "blue";
 
-    if (sequence === "OOO" || sequence === "XXX") {
-      const [linha, coluna, diagonal] = rule;
+  if (verificarVitoria()) {
+    setTimeout(() => {
+      alert(`(${letra}) GANHOU`);
+      limpa();
+    }, 5); // Exibe o alerta após 500ms
+    return; // Interrompe a função caso haja uma vitória
+  }
 
-      if (
-        (linha === 1 && coluna === 2 && diagonal === 3) ||
-        (linha === 4 && coluna === 5 && diagonal === 6) ||
-        (linha === 7 && coluna === 8 && diagonal === 9) ||
-        (linha === 1 && coluna === 4 && diagonal === 7) ||
-        (linha === 2 && coluna === 5 && diagonal === 8) ||
-        (linha === 3 && coluna === 6 && diagonal === 9) ||
-        (linha === 1 && coluna === 5 && diagonal === 9) ||
-        (linha === 3 && coluna === 5 && diagonal === 7)
-      ) {
-        if (sequence === "OOO") {
-          alert("(O) GANHOU");
-        } else {
-          alert("(X) GANHOU");
-        }
-        
-        limpa();
-        return; // Interrompe a função caso haja uma vitória
-      }
+  if (letra === "X") {
+    letra = "O";
+  } else {
+    letra = "X";
+  }
+}
+
+function verificarVitoria() {
+  for (const rule of rulesToSuccess) {
+    const [a, b, c] = rule.map(
+      (caixa) => document.getElementById(`caixa${caixa}`).innerHTML
+    );
+
+    if (a === b && b === c && a !== "") {
+      return true; // Retorna verdadeiro se houver uma sequência vencedora
     }
   }
+
+  return false; // Retorna falso se nenhuma sequência vencedora for encontrada
 }
 
 function limpa() {
   const caixas = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  caixas.map(
-    (caixa) => (document.getElementById(`caixa${caixa}`).innerHTML = "")
-  );
-}
-
-letra = "X";
-function joga(element) {
-  click = element.innerHTML;
-  if (click) {
-    alert("Opa, este quadrado já foi escolhido!");
-  } else {
-    element.innerHTML = letra;
-    if (letra == "X") {
-      letra = "O";
-    } else {
-      letra = "X";
-    }
-
-    test();
-  }
+  caixas.forEach((caixa) => {
+    const element = document.getElementById(`caixa${caixa}`);
+    element.innerHTML = "";
+    element.style.color = ""; // Remove a cor do texto
+  });
 }
 
 function resetarPagina() {

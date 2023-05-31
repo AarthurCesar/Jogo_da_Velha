@@ -18,7 +18,9 @@
     />
   </head>
   <body>
+    <button class="btn" onclick="changeBackground()"></button>
     <div class="cont">
+      <br />
       <h1 class="animated-text">Jogo da velha</h1>
       <table class="linhas">
         <tr>
@@ -39,7 +41,7 @@
           <td id="caixa9" class="letrass" onclick="joga(this)"></td>
         </tr>
       </table>
-      <button onclick="resetarPagina()">Resetar</button>
+      <button onclick="resetarPagina()" id="rest">Resetar</button>
     </div>
     <script src="indexx.js"></script>
   </body>
