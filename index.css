@@ -1,0 +1,81 @@
+.letrass {
+  width: 100px;
+  height: 100px;
+  background: #fafafa;
+  font-size: 80px;
+  color: #1b1818;
+  cursor: pointer;
+  text-align: center;
+}
+.linhas {
+  background: #000066;
+  margin-left: auto;
+  margin-right: auto;
+  border: #fefeff 20px solid;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  animation: borderAnimation 2s forwards;
+  display: inline-block;
+  padding: 1% 2% 1% 2%;
+  width: 22%;
+}
+
+.cont {
+  padding-top: 10%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #000066;
+  color: white;
+  border-radius: 25px;
+  padding: 1%;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5%;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: white;
+  color: #000066;
+  font-weight: bold;
+}
+
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes borderAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgb(4, 61, 247);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 1);
+  }
+}
+
+@keyframes growAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-text {
+  transition: transform 2s;
+  animation: borderAnimation 2s forwards, growAnimation 2s forwards;
+  display: inline-block;
+  background: none;
+  color: white;
+  font-size: 24px;
+}

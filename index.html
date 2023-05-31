@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Jogo da velha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/jogo-da-velha.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="cont">
+      <h1 class="animated-text">Jogo da velha</h1>
+      <table class="linhas">
+        <tr>
+          <td id="caixa1" class="letrass" onclick="joga(this)"></td>
+          <td id="caixa2" class="letrass" onclick="joga(this)"></td>
+          <td id="caixa3" class="letrass" onclick="joga(this)"></td>
+        </tr>
+
+        <tr>
+          <td id="caixa4" class="letrass" onclick="joga(this)"></td>
+          <td id="caixa5" class="letrass" onclick="joga(this);"></td>
+          <td id="caixa6" class="letrass" onclick="joga(this)"></td>
+        </tr>
+
+        <tr>
+          <td id="caixa7" class="letrass" onclick="joga(this)"></td>
+          <td id="caixa8" class="letrass" onclick="joga(this)"></td>
+          <td id="caixa9" class="letrass" onclick="joga(this)"></td>
+        </tr>
+      </table>
+      <button onclick="resetarPagina()">Resetar</button>
+    </div>
+    <script src="indexx.js"></script>
+  </body>
+</html>
